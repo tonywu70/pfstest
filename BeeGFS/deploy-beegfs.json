@@ -75,7 +75,7 @@
     },
     "VMImage": {
       "type": "string",
-      "defaultValue": "CentOS_7.2",
+      "defaultValue": "CentOS_7.4",
       "allowedValues": [
         "CentOS_7.4"
       ],
