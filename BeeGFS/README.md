@@ -29,7 +29,7 @@ You have to provide these parameters to the template :
 
 
 ## Deploy BeeGFS Master(HDD)
-[![Click to deploy template on Azure](http://azuredeploy.net/deploybutton.png "Click to deploy template on Azure")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Faz-cat%2FHPC-Filesystems%2Fmaster%2FBeeGFS%2Fbeegfs-master-hdd.json)  
+[![Click to deploy template on Azure](http://azuredeploy.net/deploybutton.png "Click to deploy template on Azure")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftonywu70%2Fpfstest%2Fmaster%2FBeeGFS%2Fbeegfs-master-hdd.json)  
 
 
 ## Deploy BeeGFS OSS, MDS and Client
@@ -57,7 +57,7 @@ You have to provide these parameters to the template :
 
 
 ## Deploy BeeGFS OSS, MDS and Client(HDD)
-[![Click to deploy template on Azure](http://azuredeploy.net/deploybutton.png "Click to deploy template on Azure")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Faz-cat%2FHPC-Filesystems%2Fmaster%2FBeeGFS%2Fdeploy-beegfs-hdd.json)  
+[![Click to deploy template on Azure](http://azuredeploy.net/deploybutton.png "Click to deploy template on Azure")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftonywu70%2Fpfstest%2Fmaster%2FBeeGFS%2Fdeploy-beegfs-hdd.json)  
 
 ## Deploy Using Azure Cli
 
@@ -66,8 +66,8 @@ To deploy the template using azure cli we have to use below steps-
 * Download the parameters file (beegfs-master-parameters.json, deploy-beegfs-parameters.json) on local machin .
 * Edit the parameters file, provide all the parameters.
 * To deploy gluster server and client use below command-
-  * az group deployment create -g {Resource group} --template-uri https://raw.githubusercontent.com/az-cat/HPC-Filesystems/mastercopy/BeeGFS/beegfs-master.json --parameters beegfs-master-parameters.json
-  * az group deployment create -g {Resource group} --template-uri https://raw.githubusercontent.com/az-cat/HPC-Filesystems/mastercopy/BeeGFS/deploy-beegfs.json --parameters deploy-beegfs-parameters.json
+  * az group deployment create -g {Resource group} --template-uri https://raw.githubusercontent.com/tonywu70/pfstest/master/BeeGFS/beegfs-master.json --parameters beegfs-master-parameters.json
+  * az group deployment create -g {Resource group} --template-uri https://raw.githubusercontent.com/tonywu70/pfstest/master/BeeGFS/deploy-beegfs.json --parameters deploy-beegfs-parameters.json
 
   Note - To deploy the HDD template same parameter file can be use.
 
