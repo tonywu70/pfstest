@@ -66,7 +66,7 @@
         "Standard_GS5",
         "Standard_L4s",
         "Standard_L8s",
-        "Standard_L16s",
+        "Standard_H16r",
         "Standard_L32s"
       ],
       "metadata": {
@@ -78,6 +78,7 @@
       "defaultValue": "CentOS_7.4",
       "allowedValues": [
         "CentOS_7.4"
+        "CentOS-HPC_6.8"
       ],
       "metadata": {
         "description": "VM Image."
@@ -222,10 +223,10 @@
         "sku": "7.4",
         "version": "latest"
       },
-      "RHEL_7.4": {
-        "publisher": "RedHat",
-        "offer": "RHEL",
-        "sku": "7.4",
+      "CentOS-HPC_6.8": {
+        "publisher": "OpenLogic",
+        "offer": "CentOS-HPC",
+        "sku": "6.8",
         "version": "latest"
       }
     },
@@ -713,7 +714,7 @@
             "osDisk": {
               "createOption": "FromImage",
               "managedDisk": {
-                "storageAccountType": "Premium_LRS"
+                "storageAccountType": "Standard_LRS"
               }
             },
             "imageReference": "[variables('nodeOSSettings').imageReference]",
