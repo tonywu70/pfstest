@@ -255,7 +255,7 @@ install_beegfs()
 
 	# setup management
 	if is_management; then
-		yum install -y beegfs-mgmtd beegfs-helperd beegfs-utils beegfs-admon
+		yum install -y beegfs-mgmtd-7.0-rc3 beegfs-helperd-7.0-rc3 beegfs-utils beegfs-admon
         
 		# Install management server and client
 		mkdir -p /data/beegfs/mgmtd
@@ -267,7 +267,7 @@ install_beegfs()
 	fi
 
 	if is_client; then
-		yum install -y beegfs-client beegfs-helperd beegfs-utils
+		yum install -y beegfs-client-7.0-rc3 beegfs-helperd-7.0-rc3 beegfs-utils-7.0-rc3
 		# setup client
 		sed -i 's/^sysMgmtdHost.*/sysMgmtdHost = '$MGMT_HOSTNAME'/g' /etc/beegfs/beegfs-client.conf
 		echo "$SHARE_SCRATCH /etc/beegfs/beegfs-client.conf" > /etc/beegfs/beegfs-mounts.conf
