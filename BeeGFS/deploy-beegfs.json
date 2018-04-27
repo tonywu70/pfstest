@@ -114,7 +114,9 @@
       "allowedValues": [
         "P10",
         "P20",
-        "P30"
+        "P30",
+        "P40",
+        "P50"
       ],
       "metadata": {
         "description": "Premium storage disk size used for the storage services"
@@ -191,6 +193,12 @@
       },
       "P30": {
         "size": 1023
+      },
+      "P40": {
+        "size": 2048
+      },
+      "P50": {
+        "size": 4096
       }
     },
     "RAIDMap": {
