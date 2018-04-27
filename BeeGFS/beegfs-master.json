@@ -94,6 +94,12 @@
         "description": "existing subnet name"
       }
     },
+     "RGName": {
+      "type": "string",
+      "metadata": {
+        "description": "Resource Group of the existing Virtual Network as a string."
+      }
+     },  
     "adminUsername": {
       "type": "string",
       "metadata": {
@@ -108,6 +114,7 @@
     }
   },
   "variables": {
+    "RG_VNET": "[parameters('RGName')]",
     "addressPrefix": "[parameters('addressPrefix')]",
     "subnetPrefix": "[parameters('subnetPrefix')]",
     "virtualNetworkName": "[parameters('new/existingVnetName')]",
@@ -310,7 +317,7 @@
                       "name": "[variables('ipConfigName')]",
                       "properties": {
                         "subnet": {
-                          "id": "[concat('/subscriptions/', subscription().subscriptionId,'/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'), '/subnets/', variables('subnetName'))]"
+                          "id": "[concat('/subscriptions/', subscription().subscriptionId,'/resourceGroups/', variables('RG_VNET'), '/providers/Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'), '/subnets/', variables('subnetName'))]"
                         },
                         "loadBalancerBackendAddressPools": [
                           {
