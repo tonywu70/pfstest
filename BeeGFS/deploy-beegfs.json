@@ -178,7 +178,7 @@
     "networkApiVersion": "2016-06-01",
     "insightsApiVersion": "2015-04-01",
     "deploymentApiVersion": "2016-09-01",
-    "computeApiVersion": "2016-04-30-preview",
+    "computeApiVersion": "2017-03-30",
     "nicName": "[concat(parameters('vmssName'), 'nic')]",
     "ipConfigName": "[concat(parameters('vmssName'), 'ipconfig')]",
     "location": "[resourceGroup().location]",
@@ -696,6 +696,7 @@
                 "name": "[variables('nicName')]",
                 "properties": {
                   "primary": "true",
+                  "enableAcceleratedNetworking": true,
                   "ipConfigurations": [
                     {
                       "name": "[variables('ipConfigName')]",
@@ -761,13 +762,13 @@
     {
       "type": "Microsoft.Insights/autoscaleSettings",
       "apiVersion": "[variables('insightsApiVersion')]",
-      "name": "[concat(parameters('vmSSName'),'autoscalehostlast')]",
+      "name": "[concat(parameters('vmSSName'),'autoscalehostlast1')]",
       "location": "[variables('location')]",
       "dependsOn": [
         "[concat('Microsoft.Compute/virtualMachineScaleSets/',parameters('vmssName'),'last')]"
       ],
       "properties": {
-        "name": "[concat(parameters('vmSSName'),'autoscalehostlast')]",
+        "name": "[concat(parameters('vmSSName'),'autoscalehostlast1')]",
         "targetResourceUri": "[concat('/subscriptions/',subscription().subscriptionId, '/resourceGroups/',  resourceGroup().name, '/providers/Microsoft.Compute/virtualMachineScaleSets/',parameters('vmssName'),'last')]",
         "enabled": true,
         "profiles": [
