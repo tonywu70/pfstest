@@ -217,9 +217,9 @@ install_beegfs_repo()
 {
     # Install BeeGFS repo   
     #wget -O beegfs-rhel7.repo http://www.beegfs.com/release/beegfs_6/dists/beegfs-rhel7.repo
-    wget -O beegfs-rhel6.repo https://www.beegfs.io/release/beegfs_7/dists/beegfs-rhel6.repo
-
-    mv beegfs-rhel6.repo /etc/yum.repos.d/beegfs.repo
+    wget -O beegfs-rhel7.repo https://www.beegfs.io/release/beegfs_7/dists/beegfs-rhel7.repo
+    
+    mv beegfs-rhel7.repo /etc/yum.repos.d/beegfs.repo
     #rpm --import http://www.beegfs.com/release/beegfs_2015.03/gpg/RPM-GPG-KEY-beegfs
     rpm --import http://www.beegfs.com/release/beegfs_7/gpg/RPM-GPG-KEY-beegfs
 
@@ -255,7 +255,7 @@ install_beegfs()
 
 	# setup management
 	if is_management; then
-		yum install -y beegfs-mgmtd-7.0-rc3 beegfs-helperd-7.0-rc3 beegfs-utils beegfs-admon
+		yum install -y beegfs-mgmtd beegfs-helperd beegfs-utils beegfs-admon
         
 		# Install management server and client
 		mkdir -p /data/beegfs/mgmtd
@@ -267,7 +267,7 @@ install_beegfs()
 	fi
 
 	if is_client; then
-		yum install -y beegfs-client-7.0-rc3 beegfs-helperd-7.0-rc3 beegfs-utils-7.0-rc3
+		yum install -y beegfs-client beegfs-helperd beegfs-utils
 		# setup client
 		sed -i 's/^sysMgmtdHost.*/sysMgmtdHost = '$MGMT_HOSTNAME'/g' /etc/beegfs/beegfs-client.conf
 		echo "$SHARE_SCRATCH /etc/beegfs/beegfs-client.conf" > /etc/beegfs/beegfs-mounts.conf
