@@ -83,7 +83,13 @@
       "metadata": {
         "description": "VM Image."
       }
-    },        
+    }, 
+    "RGName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the RG of the virtual network which master server is using."
+      }
+    },
     "new/existingVnetName": {
       "type": "string",
       "metadata": {
@@ -163,7 +169,7 @@
         "description": "Volume for data disks."
       }
     },
-    "RGvnetName": {
+    "RGName": {
       "type": "string",
       "metadata": {
         "description": "Name of the RG of the virtual network which master server is using."
@@ -211,7 +217,7 @@
     },
     "image": "[parameters('VMImage')]",
     "beeGFSNodeSettings": {
-      "vnetRG": "[parameters('RGvnetName')]",
+      "vnetRG": "[parameters('RGName')]",
       "vnetName": "[parameters('new/existingVnetName')]",
       "subnetName": "[parameters('new/existingSubnetName')]",
       "MasterName": "[parameters('masterName')]",
@@ -834,6 +840,9 @@
           },
           "beeGFSNodeSettings": {
             "value": "[variables('beeGFSNodeSettings')]"
+          },
+          "RGName": {
+            "value": "[variables('RGName')]"
           },
           "nodeOSSettings": {
             "value": "[variables('nodeOSSettings')]"
