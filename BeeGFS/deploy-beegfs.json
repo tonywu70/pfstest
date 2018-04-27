@@ -776,7 +776,7 @@
     {
       "type": "Microsoft.Insights/autoscaleSettings",
       "apiVersion": "[variables('insightsApiVersion')]",
-      "name": "[concat(parameters('vmSSName'),'autoscalehostlast1')]",
+      "name": "[concat(parameters('vmSSName'),'autoscalehostlast2')]",
       "location": "[variables('location')]",
       "dependsOn": [
         "[concat('Microsoft.Compute/virtualMachineScaleSets/',parameters('vmssName'),'last')]"
