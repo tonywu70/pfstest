@@ -14,11 +14,15 @@
     "beeGFSNodeSettings": {
       "type": "object"
     },
+    "RGName": {
+      "type": "string"
+    },
     "nodeOSSettings": {
       "type": "object"
     }
   },
   "variables": {
+    "vnetRG": "[parameters('RGName')]",
     "networkApiVersion": "2016-06-01",
     "insightsApiVersion": "2015-04-01",
     "computeApiVersion": "2017-03-30",
@@ -429,7 +433,7 @@
                       "name": "[variables('ipConfigName')]",
                       "properties": {
                         "subnet": {
-                          "id": "[concat('/subscriptions/', subscription().subscriptionId,'/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'), '/subnets/', variables('subnetName'))]"
+                          "id": "[concat('/subscriptions/', subscription().subscriptionId,'/resourceGroups/', variables('vnetRG'), '/providers/Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'), '/subnets/', variables('subnetName'))]"
                         }
                       }
                     }
