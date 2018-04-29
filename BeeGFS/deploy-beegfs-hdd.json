@@ -137,6 +137,7 @@
       "defaultValue": "CentOS_7.2",
       "allowedValues": [
         "CentOS_7.2"
+        "CentOS-HPC_7.1"
       ],
       "metadata": {
         "description": "VM Image."
@@ -279,6 +280,12 @@
         "publisher": "OpenLogic",
         "offer": "CentOS",
         "sku": "7.2",
+        "version": "latest"
+      },
+      "CentOS-HPC_7.1": {
+        "publisher": "OpenLogic",
+        "offer": "CentOS-HPC",
+        "sku": "7.1",
         "version": "latest"
       },
       "RHEL_7.2": {
