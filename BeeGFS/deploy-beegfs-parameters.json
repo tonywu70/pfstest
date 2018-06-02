@@ -45,7 +45,7 @@
     "volumeType": {
       "value": "RAID0"     
     },
-    "RGvnetName": {
+    "RGName": {
       "value": ""      
     },
     "masterName": {
