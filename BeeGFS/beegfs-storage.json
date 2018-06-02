@@ -14,15 +14,11 @@
     "beeGFSNodeSettings": {
       "type": "object"
     },
-    "RGName": {
-      "type": "string"
-    },
     "nodeOSSettings": {
       "type": "object"
     }
   },
   "variables": {
-    "vnetRG": "[parameters('RGName')]",
     "networkApiVersion": "2016-06-01",
     "insightsApiVersion": "2015-04-01",
     "computeApiVersion": "2017-03-30",
