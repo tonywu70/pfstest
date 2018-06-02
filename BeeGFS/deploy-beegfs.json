@@ -90,13 +90,13 @@
         "description": "Name of the RG of the virtual network which master server is using."
       }
     },
-    "new/existingVnetName": {
+    "ExistingVnetName": {
       "type": "string",
       "metadata": {
         "description": "existing vnet name."
       }
     },
-    "new/existingSubnetName": {
+    "ExistingSubnetName": {
       "type": "string",
       "metadata": {
         "description": "existing subnet name"
@@ -169,12 +169,6 @@
         "description": "Volume for data disks."
       }
     },
-    "RGName": {
-      "type": "string",
-      "metadata": {
-        "description": "Name of the RG of the virtual network which master server is using."
-      }
-    },
     "masterName": {
       "type": "string",
       "metadata": {
@@ -218,8 +212,8 @@
     "image": "[parameters('VMImage')]",
     "beeGFSNodeSettings": {
       "vnetRG": "[parameters('RGName')]",
-      "vnetName": "[parameters('new/existingVnetName')]",
-      "subnetName": "[parameters('new/existingSubnetName')]",
+      "vnetName": "[parameters('ExistingVnetName')]",
+      "subnetName": "[parameters('ExistingSubnetName')]",
       "MasterName": "[parameters('masterName')]",
       "nodeType": "[parameters('nodeType')]",
       "customDomain": "mydom",
