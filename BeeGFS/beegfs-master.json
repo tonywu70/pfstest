@@ -70,7 +70,7 @@
         "description": "VM Image."
       }
     },       
-    "new/existingVnetName": {
+    "ExistingVnetName": {
       "type": "string",
       "metadata": {
         "description": "existing vnet name."
@@ -82,19 +82,7 @@
         "description": "existing subnet name"
       }
     },
-    "subnetPrefix": {
-      "type": "string",
-      "metadata": {
-        "description": "existing subnet name"
-      }
-    },
-    "addressPrefix": {
-      "type": "string",
-      "metadata": {
-        "description": "existing subnet name"
-      }
-    },
-     "RGName": {
+    "RGName": {
       "type": "string",
       "metadata": {
         "description": "Resource Group of the existing Virtual Network as a string."
