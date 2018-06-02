@@ -791,9 +791,6 @@
           "beeGFSNodeSettings": {
             "value": "[variables('beeGFSNodeSettings')]"
           },
-          "RGName": {
-            "value": "[variables('vnetRG')]"
-          },
           "nodeOSSettings": {
             "value": "[variables('nodeOSSettings')]"
           }
