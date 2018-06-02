@@ -76,7 +76,7 @@
         "description": "existing vnet name."
       }
     },
-    "new/existingSubnetName": {
+    "ExistingSubnetName": {
       "type": "string",
       "metadata": {
         "description": "existing subnet name"
@@ -115,10 +115,8 @@
   },
   "variables": {
     "RG_VNET": "[parameters('RGName')]",
-    "addressPrefix": "[parameters('addressPrefix')]",
-    "subnetPrefix": "[parameters('subnetPrefix')]",
-    "virtualNetworkName": "[parameters('new/existingVnetName')]",
-    "subnetName": "[parameters('new/existingSubnetName')]",
+    "virtualNetworkName": "[parameters('ExistingVnetName')]",
+    "subnetName": "[parameters('ExistingSubnetName')]",
     "publicIPAddressName": "[concat(parameters('vmssName'), 'pip')]",
     "loadBalancerName": "[concat(parameters('vmssName'), 'lb')]",
     "publicIPAddressID": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]",
