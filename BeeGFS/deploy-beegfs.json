@@ -178,6 +178,7 @@
   },
   "variables": {
     "networkApiVersion": "2016-06-01",
+    "vnetRG": "[parameters('RGName')]",
     "insightsApiVersion": "2015-04-01",
     "deploymentApiVersion": "2016-09-01",
     "computeApiVersion": "2017-03-30",
@@ -791,7 +792,7 @@
             "value": "[variables('beeGFSNodeSettings')]"
           },
           "RGName": {
-            "value": "[parameters('RGName')]"
+            "value": "[variables('vnetRG')]"
           },
           "nodeOSSettings": {
             "value": "[variables('nodeOSSettings')]"
