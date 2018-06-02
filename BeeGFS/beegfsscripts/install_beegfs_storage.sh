@@ -395,8 +395,8 @@ tune_tcp
 setup_domain
 install_beegfs_repo
 install_beegfs
-download_lis
-install_lis_in_cron
+#download_lis
+#install_lis_in_cron
 
 
 # Create marker file so we know we're configured
