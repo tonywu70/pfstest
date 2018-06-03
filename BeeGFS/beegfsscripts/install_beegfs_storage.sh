@@ -209,7 +209,8 @@ setup_disks()
 		mkdir -p $BEEGFS_METADATA    
 		setup_data_disks $BEEGFS_METADATA "ext4" "$metadataDevices" "md20"
 	fi
-	
+
+    yum -y install nfs-utils nfs-utils-lib
     mount -a
 }
 
