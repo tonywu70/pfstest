@@ -134,7 +134,7 @@ EOF
         
         sleep 10
         
-        mount $mountPoint
+        mount -a
     fi
 }
 
