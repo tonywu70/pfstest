@@ -122,19 +122,19 @@ EOF
 
         if [ "$filesystem" == "xfs" ]; then
             mkfs -t $filesystem /dev/$raidDevice
-	    export xfsuuid="UUID=`blkid |grep dev/$raidDevice |cut -d " " -f 2 |cut -c 7-42`"
-            echo " $xfsuuid $mountPoint $filesystem rw,noatime,attr2,inode64,nobarrier,sunit=1024,swidth=4096,nofail 0 2" >> /etc/fstab
+	    xfsuuid=`blkid |grep dev/$raidDevice |cut -d " " -f 2 |cut -c 7-42`
+            echo "UUID=$xfsuuid $mountPoint $filesystem rw,noatime,attr2,inode64,nobarrier,sunit=1024,swidth=4096,nofail 0 2" >> /etc/fstab
         else
             mkfs.ext4 -i 2048 -I 512 -J size=400 -Odir_index,filetype /dev/$raidDevice
             sleep 5
             tune2fs -o user_xattr /dev/$raidDevice
-	    export ext4uuid="UUID=`blkid |grep dev/$raidDevice |cut -d " " -f 2 |cut -c 7-42`"
-            echo "$ex4uuid $mountPoint $filesystem noatime,nodiratime,nobarrier,nofail 0 2" >> /etc/fstab
+	    ext4uuid=`blkid |grep dev/$raidDevice |cut -d " " -f 2 |cut -c 7-42`
+            echo "UUID=$ex4uuid $mountPoint $filesystem noatime,nodiratime,nobarrier,nofail 0 2" >> /etc/fstab
         fi
         
         sleep 10
         
-        mount -a
+        mount $mountPoint
     fi
 }
 
